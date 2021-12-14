@@ -14,16 +14,19 @@
         <h2>Vacation Contest Sign-Up Form</h2>
         <form action="results.html" method="GET">
             <div>
-                <label for="firstname">Your First Name</label>
-                <input type="text" id="firstname" name="firstname">
-                <label for="lastname">Last Name</label>
-                <input type="text" id="lastname" name="lastname">
+                <label for="firstname">Your First Name</label><span class="required-field">*</span>
+                <input type="text" id="firstname" name="firstname" minlength="2" maxlength="35" required>
+                <label for="lastname">Last Name</label><span class="required-field">*</span>
+                <input type="text" id="lastname" name="lastname" minlength="2" maxlength="35" required>
+                <label for="age">Your Age</label>
+                <input type="number" name="age" id="age" min="21" max="120">
+                <h5>must be 21 or older to enter the contest</h5>
             </div>
             <!-- TODO: Make fieldset and legend -->
             <fieldset>
                 <legend>Your Contact Info</legend>
-                <label for="email">Your Email</label>
-                <input type="email" id="email" name="email">
+                <label for="email">Your Email</label><span class="required-field">*</span>
+                <input type="email" id="email" name="email" required>
                 <label for="address">Your Street Address</label>
                 <input type="text" name="address">
                 <label for="city">Your City</label>
@@ -82,7 +85,7 @@
                     </select>
                 </select>
                 <label for="zip">Your Zip Code</label>
-                <input type="text" name="zip">
+                <input type="text" name="zip" pattern="[0-9]{5}" title="5-Digit US ZIP Code.">
             </fieldset>
             
 
@@ -126,6 +129,8 @@
             
             <!-- TODO: Submit Button -->
             <input type="submit" value="Enter the Contest">
+            <label>Your Secret Code (Must be 6 alphanumeric characters)</label><span class="required-field">*</span>
+            <input type="password" required title="6 Alphanumeric Character Passcode." pattern="[0-9A-Za-z]{6}">
         </form>
     </main>
     <footer>
